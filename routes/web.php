@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,5 @@ Route::get('/post/{id}', [PostController::class, 'getPostById']);
 Route::get('/delete-post/{id}', [PostController::class, 'deletePost']);
 Route::get('/edit-post/{id}', [PostController::class, 'editPost']);
 Route::post('update-post', [PostController::class, 'updatePost'])->name('post.updated');
+Route::get('/add-user', [UserController::class, 'insertRecord']);
+Route::get('/get-phone/{id}', [UserController::class, 'fetchPhoneByUser']);
